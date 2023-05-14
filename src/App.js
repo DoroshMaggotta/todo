@@ -1,23 +1,22 @@
-import logo from './logo.svg';
+
 import './App.css';
+import InputField from "./components/InputField";
+import MyList from "./components/List";
+import {useState} from "react";
+import {Container} from "@mui/material";
 
 function App() {
+    const [tasks, changeTasks] = useState([]);
+    const handleData = (data) => {
+        changeTasks([...tasks, data]);
+    };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <Container maxWidth="xs">
+            <InputField onData={handleData} />
+            <MyList tasks={tasks} />
+        </Container>
     </div>
   );
 }
