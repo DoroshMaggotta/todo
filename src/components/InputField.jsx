@@ -16,8 +16,8 @@ function InputField({ onData }) {
 
     return (
         <div className="inputField">
-            <TextField onChange={handleTextareaChange} value={inputValue} id="outlined-basic" label="Outlined" variant="outlined" />
-            <Button onClick={sendDataToParent} variant="contained" color="success">
+            <TextField fullWidth onChange={handleTextareaChange} value={inputValue} id="outlined-basic" label="Outlined" variant="outlined" />
+            <Button  disabled={!inputValue} onClick={sendDataToParent} variant="contained" color="success">
                 Add
             </Button>
         </div>

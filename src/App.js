@@ -15,7 +15,7 @@ function App() {
     <div className="App">
         <Container maxWidth="xs">
             <InputField onData={handleData} />
-            <MyList tasks={tasks} />
+            <MyList tasks={tasks} setTasks={changeTasks} />
         </Container>
     </div>
   );
